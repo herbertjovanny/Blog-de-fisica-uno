@@ -1,0 +1,21 @@
+body {
+    background-color: #d0fdd7;
+}
+
+strong {
+    color: red;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.relleno {
+    background-color: blue;
+}
+
+.font_color {
+    color: white;
+}

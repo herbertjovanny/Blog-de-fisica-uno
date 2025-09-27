@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Conversor de Unidades</h1>
+
+        <div class="converter-box">
+            <label for="conversionType">Selecciona la Conversión:</label>
+            <select id="conversionType" onchange="resetFields()">
+                <option value="length">Longitud (m, km, mi, ft)</option>
+                <option value="mass">Masa (kg, g, lb, oz)</option>
+                <option value="temperature">Temperatura (°C, °F, K)</option>
+            </select>
+        </div>
+
+        <div class="converter-box">
+            <label for="inputValue">Valor a Convertir:</label>
+            <input type="number" id="inputValue" value="1" min="0" oninput="convert()">
+        </div>
+
+        <div class="converter-box">
+            <label for="fromUnit">De:</label>
+            <select id="fromUnit" onchange="convert()"></select>
+        </div>
+
+        <div class="converter-box">
+            <label for="toUnit">A:</label>
+            <select id="toUnit" onchange="convert()"></select>
+        </div>
+
+        <div class="converter-box result">
+            <p>Resultado:</p>
+            <p id="resultValue">Esperando conversión...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

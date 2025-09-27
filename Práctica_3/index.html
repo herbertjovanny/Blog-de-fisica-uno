@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preload" href="CSS/style.css" as="style">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicación</title>
+</head>
+
+<body>
+    <main class="contenedor sombra">
+        <h2>Conversor</h2>
+        <form id="sum-form" autocomplete="off">
+            <legend>Elige tu conversión</legend>
+            <div class="field">
+                <label for="n1">Número 1</label>
+                <input id="n1" name="n1" type="number" step="any" placeholder="Número 1" inputmode="decimal">
+            </div>
+
+            <div class="field">
+                <label for="n2"></label>
+                <input id="n2" name="n2" type="number" step="any" placeholder="Número 2" inputmode="decimal">
+            </div>
+
+            <div class="actions">
+                <button type="submit"> Multiplicar</button>
+                <button type="submit" id="clear"> Limpiar</button>
+            </div>
+            <p class=" result" aria-live="polite">Resultado <span id="out">=</span></p>
+        </form>
+        <div></div>
+    </main>
+    <script src="JS/app.js"></script>
+</body>
+
+</html>

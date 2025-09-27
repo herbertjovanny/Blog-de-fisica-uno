@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <h2>Conversor de Unidades</h2>
+        <input type="number" id="cantidad" placeholder="Ingrese valor">
+
+        <select id="origen">
+            <option value="m">Metros</option>
+            <option value="km">Kilómetros</option>
+            <option value="mi">Millas</option>
+            <option value="ft">Pies</option>
+        </select>
+
+        <select id="destino">
+            <option value="m">Metros</option>
+            <option value="km">Kilómetros</option>
+            <option value="mi">Millas</option>
+            <option value="ft">Pies</option>
+        </select>
+
+        <button id="btnConvertir">Convertir</button>
+
+        <div class="resultado" id="resultado"></div>
+    </div>
+
+    <!-- Asegúrate de que este archivo exista -->
+    <script src="app.js"></script>
+</body>
+
+</html>

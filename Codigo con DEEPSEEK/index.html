@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Conversor de Unidades</h1>
+            <p>Convierte entre diferentes sistemas de medición</p>
+        </header>
+
+        <main>
+            <div class="converter-card">
+                <div class="input-group">
+                    <label for="category">Tipo de unidad:</label>
+                    <select id="category">
+                        <option value="longitud">Longitud</option>
+                        <option value="peso">Peso/Masa</option>
+                        <option value="temperatura">Temperatura</option>
+                        <option value="volumen">Volumen</option>
+                        <option value="velocidad">Velocidad</option>
+                    </select>
+                </div>
+
+                <div class="conversion-area">
+                    <div class="input-section">
+                        <input type="number" id="inputValue" placeholder="Ingresa el valor" step="any">
+                        <select id="fromUnit"></select>
+                    </div>
+
+                    <button id="convertBtn" class="convert-btn">
+                        <span>Convertir</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </button>
+
+                    <div class="output-section">
+                        <input type="text" id="outputValue" placeholder="Resultado" readonly>
+                        <select id="toUnit"></select>
+                    </div>
+                </div>
+
+                <button id="swapBtn" class="swap-btn" title="Intercambiar unidades">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M16 4L20 8L16 12" stroke="currentColor" stroke-width="2" />
+                        <path d="M8 20L4 16L8 12" stroke="currentColor" stroke-width="2" />
+                        <path d="M20 8L4 8" stroke="currentColor" stroke-width="2" />
+                        <path d="M4 16L20 16" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="history" class="history-section">
+                <h3>Historial de Conversiones</h3>
+                <div id="historyList" class="history-list"></div>
+                <button id="clearHistory" class="clear-btn">Limpiar Historial</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

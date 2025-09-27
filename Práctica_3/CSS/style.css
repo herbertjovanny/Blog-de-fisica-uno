@@ -1,0 +1,201 @@
+/* =========================================================
+   Hoja de estilos: Suma de 2 números
+   Autor: (tu nombre)
+   Descripción: Estilos base, tarjeta central y controles
+   ========================================================= */
+
+/* ------------------------------
+   1) Variables (tema)
+   - Facilitan cambiar colores/estilo en un solo lugar
+   ------------------------------ */
+:root {
+  --bg: #f6f7fb;
+  /* Fondo general de la página */
+  --card: #ffffff;
+  /* Fondo de la tarjeta */
+  --text: #1f2937;
+  /* Color principal del texto (gris oscuro) */
+  --muted: #6b7280;
+  /* Texto secundario (etiquetas, hints) */
+  --primary: #2563eb;
+  /* Color principal (botón primario, foco) */
+  --primary-hover: #1d4ed8;
+  /* Variante al pasar el mouse */
+  --radius: 16px;
+  /* Radio de borde para tarjetas/botones */
+}
+
+/* ------------------------------
+     2) Reset y base tipográfica
+     - box-sizing: border-box; hace que padding/border
+       no aumenten el ancho total calculado
+     ------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+
+/* Ocupa el alto total y define fuente y fondo global */
+html,
+body {
+  height: 100%;
+  /* Sistema de fuentes nativo para mejor renderizado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Fondo con degradado sutil para dar profundidad */
+  background: radial-gradient(1200px 600px at 50% -100px, #e8eeff, var(--bg));
+  color: var(--text);
+}
+
+/* ------------------------------
+     3) Tarjeta (contenedor principal)
+     - Centrada con ancho máximo y sombra suave
+     ------------------------------ */
+.contenedor {
+  width: 450px;
+  background-color: #e0e7ff;
+  padding: 70px 50px;
+  justify-content: space-between;
+}
+
+.sombra {
+  box-shadow: 0px 5px 15px 0px rgba(132, 195, 214, 0.54);
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(132, 195, 214, 0.54);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(132, 195, 214, 0.54);
+}
+
+.card {
+  max-width: 420px;
+  /* Limita el ancho para mejor lectura */
+  margin: clamp(24px, 8vh, 80px) auto;
+  /* Centra y adapta el margen vertical */
+  background: var(--card);
+  padding: 24px;
+  /* Espaciado interno cómodo */
+  border-radius: var(--radius);
+  /* Bordes redondeados consistentes */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  /* Elevación sutil */
+}
+
+/* Título principal */
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+  /* Tamaño legible pero compacto */
+  letter-spacing: 0.2px;
+  /* Micro-ajuste de tracking */
+}
+
+/* ------------------------------
+     4) Campos de formulario
+     ------------------------------ */
+.field {
+  margin: 12px 0;
+  /* Separación vertical entre campos */
+}
+
+/* Etiquetas de inputs */
+label {
+  display: block;
+  font-size: 0.92rem;
+  /* Un poco más pequeño que el texto base */
+  color: var(--muted);
+  /* Color secundario para jerarquía visual */
+  margin-bottom: 6px;
+}
+
+/* Entradas numéricas */
+input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  /* Área de click cómoda */
+  border: 1px solid #d2d2d2;
+  /* Borde claro por defecto */
+  border-radius: 10px;
+  font-size: 1rem;
+  /* Transiciones para una sensación de fluidez */
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+}
+
+/* Estado de foco (accesibilidad)
+     - Sin outline “duro” del navegador
+     - Anillo de enfoque con color del tema y contraste adecuado */
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  /* Anillo visible en teclado */
+}
+
+/* ------------------------------
+     5) Botones y acciones
+     ------------------------------ */
+.actions {
+  display: flex;
+  /* Coloca botones en fila */
+  gap: 10px;
+  /* Espacio entre botones */
+  margin-top: 14px;
+}
+
+/* Estilo base para todos los botones */
+button {
+  appearance: none;
+  /* Quita estilos nativos inconsistentes */
+  border: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  /* Feedback visual al interactuar */
+  transition: transform 0.05s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+/* Botón primario: "Sumar" */
+button[type="submit"] {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+  /* Eleva el botón para jerarquía */
+}
+
+/* Estados hover/active del primario */
+button[type="submit"]:hover {
+  background: var(--primary-hover);
+  /* Más contraste al pasar el mouse */
+}
+
+button[type="submit"]:active {
+  transform: translateY(1px);
+  /* “Click” táctil */
+}
+
+/* Botón secundario: "Limpiar"
+     - Contraste suficiente pero menos énfasis que el primario */
+#clear {
+  background: #eef2ff;
+  color: #1e3a8a;
+}
+
+#clear:hover {
+  background: #e0e7ff;
+}
+
+#clear:active {
+  transform: translateY(1px);
+}
+
+/* ------------------------------
+     6) Resultado
+     - Peso de fuente mayor para destacarlo
+     ------------------------------ */
+.result {
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
